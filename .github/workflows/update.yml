@@ -1,0 +1,38 @@
+name: Update CME Calendar
+
+on:
+  schedule:
+    # 每天 UTC 时间 00:00 运行 (北京时间早上 8:00)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Generate Calendar
+      run: python main.py
+
+    - name: Commit and Push if changed
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add emini_dow_calendar.ics
+        # 只有在文件有变化时才 commit
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update calendar data" && git push)
