@@ -7,10 +7,8 @@ def get_third_friday(year, month):
     计算指定年份和月份的第三个星期五。
     逻辑：每个月的15日到21日之间必定包含第三个星期五。
     """
-    # 从该月15号开始找
     d = date(year, month, 15)
     # weekday(): 0=Monday, 4=Friday
-    # 计算距离下一个周五还有几天
     days_ahead = (4 - d.weekday() + 7) % 7
     return d + timedelta(days=days_ahead)
 
@@ -22,12 +20,12 @@ def get_last_trading_day(contract_year, contract_month):
     """
     base_date = get_third_friday(contract_year, contract_month)
     
-    # 加载NYSE假期 (CME 股指期货交易时间通常跟随 NYSE 假日安排)
-    nyse_holidays = holidays.US(years=contract_year, markets=['NYSE'])
+    # 修正点：直接使用 holidays.NYSE 类来获取纽交所假期
+    nyse_holidays = holidays.NYSE(years=contract_year)
     
     # 如果第三个星期五是假期，向前寻找最近的工作日
-    # (注：Juneteenth 六月节经常影响6月合约)
-    while base_date in nyse_holidays or base_date.weekday() > 4: # 排除周末和假期
+    # 同时排除周末 (weekday > 4) 和 假期
+    while base_date in nyse_holidays or base_date.weekday() > 4: 
         base_date -= timedelta(days=1)
         
     return base_date
@@ -38,28 +36,24 @@ def generate_contract_code(year, month):
     月份代码: H(3), M(6), U(9), Z(12)
     """
     month_codes = {3: 'H', 6: 'M', 9: 'U', 12: 'Z'}
-    # 获取年份后两位
     year_short = str(year)[-2:]
     return f"YM{month_codes[month]}{year_short}"
 
 def main():
     c = Calendar()
     
-    # 生成当前年份和下一年的数据
     current_year = date.today().year
+    # 生成今年和明年的日历
     target_years = [current_year, current_year + 1]
-    contract_months = [3, 6, 9, 12] # E-mini Dow 季度合约
+    contract_months = [3, 6, 9, 12] 
     
     print(f"Generating calendar for years: {target_years}")
 
     for year in target_years:
         for month in contract_months:
-            # 过滤掉已经过去的合约（可选，这里保留整年以便回顾）
-            
             last_trade = get_last_trading_day(year, month)
             code = generate_contract_code(year, month)
             
-            # 创建全天事件
             e = Event()
             e.name = f"🔔 Last Trade: {code} (E-mini Dow)"
             e.begin = last_trade
@@ -74,7 +68,6 @@ def main():
             c.events.add(e)
             print(f"Generated: {code} -> {last_trade}")
 
-    # 写入文件
     output_file = "emini_dow_calendar.ics"
     with open(output_file, "w") as f:
         f.writelines(c.serialize())
