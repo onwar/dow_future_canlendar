@@ -6,48 +6,48 @@ BEGIN:VEVENT
 DTSTART;VALUE=DATE:20260618
 DESCRIPTION:Product: E-mini Dow ($5)\nContract: YMM26\nRule: 3rd Friday of June\nStatus: Calculated (Holiday Adjusted)
 SUMMARY:🔔 Last Trade: YMM26 (E-mini Dow)
-UID:6b389c15-e5f5-4956-b729-f12a597aa11e@6b38.org
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260918
-DESCRIPTION:Product: E-mini Dow ($5)\nContract: YMU26\nRule: 3rd Friday of September\nStatus: Calculated (Holiday Adjusted)
-SUMMARY:🔔 Last Trade: YMU26 (E-mini Dow)
-UID:b77079a8-daff-48ef-9bb2-770543c9c4bd@b770.org
+UID:123c2470-efbb-44f6-95eb-89f51cfeebf4@123c.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART;VALUE=DATE:20261218
 DESCRIPTION:Product: E-mini Dow ($5)\nContract: YMZ26\nRule: 3rd Friday of December\nStatus: Calculated (Holiday Adjusted)
 SUMMARY:🔔 Last Trade: YMZ26 (E-mini Dow)
-UID:8782cf6c-5543-4043-8419-794c8a464aeb@8782.org
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;VALUE=DATE:20270617
-DESCRIPTION:Product: E-mini Dow ($5)\nContract: YMM27\nRule: 3rd Friday of June\nStatus: Calculated (Holiday Adjusted)
-SUMMARY:🔔 Last Trade: YMM27 (E-mini Dow)
-UID:458b90ca-4b98-41ce-bf05-44e9a3a49d0f@458b.org
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260320
-DESCRIPTION:Product: E-mini Dow ($5)\nContract: YMH26\nRule: 3rd Friday of March\nStatus: Calculated (Holiday Adjusted)
-SUMMARY:🔔 Last Trade: YMH26 (E-mini Dow)
-UID:a229c14c-594e-4c30-b7fc-17dcee07686e@a229.org
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;VALUE=DATE:20271217
-DESCRIPTION:Product: E-mini Dow ($5)\nContract: YMZ27\nRule: 3rd Friday of December\nStatus: Calculated (Holiday Adjusted)
-SUMMARY:🔔 Last Trade: YMZ27 (E-mini Dow)
-UID:7315ff90-937c-490f-91fa-830e85bc3175@7315.org
+UID:9fe325e1-d303-47ec-ad2a-b64ed2d40d69@9fe3.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART;VALUE=DATE:20270917
 DESCRIPTION:Product: E-mini Dow ($5)\nContract: YMU27\nRule: 3rd Friday of September\nStatus: Calculated (Holiday Adjusted)
 SUMMARY:🔔 Last Trade: YMU27 (E-mini Dow)
-UID:4e1e185a-90b6-48bc-a0ce-d08854c25b26@4e1e.org
+UID:fa944368-f262-4551-9ee8-a23d59642301@fa94.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20271217
+DESCRIPTION:Product: E-mini Dow ($5)\nContract: YMZ27\nRule: 3rd Friday of December\nStatus: Calculated (Holiday Adjusted)
+SUMMARY:🔔 Last Trade: YMZ27 (E-mini Dow)
+UID:c4d571e9-7e10-48c5-8579-389dbab91ec0@c4d5.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270617
+DESCRIPTION:Product: E-mini Dow ($5)\nContract: YMM27\nRule: 3rd Friday of June\nStatus: Calculated (Holiday Adjusted)
+SUMMARY:🔔 Last Trade: YMM27 (E-mini Dow)
+UID:f48d58ec-d2b5-4477-bcbd-b19561e12a32@f48d.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260918
+DESCRIPTION:Product: E-mini Dow ($5)\nContract: YMU26\nRule: 3rd Friday of September\nStatus: Calculated (Holiday Adjusted)
+SUMMARY:🔔 Last Trade: YMU26 (E-mini Dow)
+UID:6c719e97-8671-4d04-9630-0f3d1bf45174@6c71.org
 END:VEVENT
 BEGIN:VEVENT
 DTSTART;VALUE=DATE:20270319
 DESCRIPTION:Product: E-mini Dow ($5)\nContract: YMH27\nRule: 3rd Friday of March\nStatus: Calculated (Holiday Adjusted)
 SUMMARY:🔔 Last Trade: YMH27 (E-mini Dow)
-UID:6df15fd9-a6af-493f-a749-35345f01fc03@6df1.org
+UID:7ec51ff7-3af4-4a1a-aee8-c35d68c098d2@7ec5.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260320
+DESCRIPTION:Product: E-mini Dow ($5)\nContract: YMH26\nRule: 3rd Friday of March\nStatus: Calculated (Holiday Adjusted)
+SUMMARY:🔔 Last Trade: YMH26 (E-mini Dow)
+UID:cc27bb8c-83ee-414b-97f4-0f9edc0e8184@cc27.org
 END:VEVENT
 END:VCALENDAR
